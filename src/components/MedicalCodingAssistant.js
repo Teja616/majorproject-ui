@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 
-const API_URL = " https://martin-uncle-rental-older.trycloudflare.com/predict"; 
-const ADVICE_API_URL = " https://martin-uncle-rental-older.trycloudflare.com/general-advice";
+const API_URL = " https://technique-francisco-thy-decision.trycloudflare.com/predict"; 
+const ADVICE_API_URL = " https://technique-francisco-thy-decision.trycloudflare.com/general-advice";
 
 // Change to your deployed Render/Railway URL later
 
