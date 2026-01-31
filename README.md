@@ -1,70 +1,233 @@
-# Getting Started with Create React App
+# 🏥 Mapping Outpatient Department (OPD) Notes to ICD-10 Codes Using Fine Tuned Language Models - UI
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+An AI-powered web application that automatically predicts ICD-10 medical codes from clinical documentation using advanced natural language processing leveraging LLM fine tuning.
+Built as a part of major project of CMRIT, Hyderabad
 
-## Available Scripts
+<img width="1869" height="843" alt="image" src="https://github.com/user-attachments/assets/81588125-9d4c-4ec4-b00c-29d306513b22" />
 
-In the project directory, you can run:
 
-### `npm start`
+## 📋 About The Project
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Medical Coding Assistant streamlines the healthcare coding process by leveraging machine learning to analyze clinical text and predict appropriate ICD-10 codes. This tool helps medical coders, healthcare providers, and billing professionals save time while improving coding accuracy.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### Key Features
 
-### `npm test`
+- 🤖 **AI-Powered Predictions** - Advanced LLM model trained on clinical documentation(domain specific training)
+- 📝 **Intelligent Code Descriptions** - Automatic display of ICD-10 code descriptions
+- ⚡ **Real-time Processing** - Instant code predictions from clinical text
+- 🎨 **Modern UI** - Clean, intuitive interface built with React
+- 🔒 **HIPAA Considerations** - Designed with healthcare data privacy in mind
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Built With
 
-### `npm run build`
+**Frontend:**
+- React 18.x
+- Modern CSS with gradients and animations
+- Responsive design for all devices
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+**Backend:**
+- Python 3.8+
+- FastAPI / Flask (for API endpoint)
+- Machine Learning model (TensorFlow/PyTorch/Scikit-learn)
+- Natural Language Processing
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## 🚀 Live Demo
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+**Production URL:** [https://majorproject-ui.vercel.app](https://majorproject-ui.vercel.app/)  
 
-### `npm run eject`
+## 💻 Running Locally
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### Prerequisites
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- Node.js 16.x or higher
+- npm or yarn
+- Python 3.8 or higher
+- pip (Python package manager)
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### Backend Setup
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/yourusername/medical-coding-assistant.git
+   cd medical-coding-assistant
+   ```
 
-## Learn More
+2. **Navigate to backend directory**
+   ```bash
+   cd backend
+   ```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+3. **Create a virtual environment**
+   ```bash
+   python -m venv venv
+   
+   # On Windows
+   venv\Scripts\activate
+   
+   # On macOS/Linux
+   source venv/bin/activate
+   ```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+4. **Install Python dependencies**
+   ```bash
+   pip install -r requirements.txt
+   ```
 
-### Code Splitting
+5. **Start the backend server**
+   ```bash
+   # If using FastAPI
+   uvicorn main:app --reload --port 8000
+   
+   # If using Flask
+   python app.py
+   ```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+   The backend API will be available at `http://localhost:8000`
 
-### Analyzing the Bundle Size
+### Frontend Setup
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+1. **Open a new terminal and navigate to frontend directory**
+   ```bash
+   cd frontend
+   ```
 
-### Making a Progressive Web App
+2. **Install dependencies**
+   ```bash
+   npm install
+   # or
+   yarn install
+   ```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+3. **Start the development server**
+   ```bash
+   npm start
+   # or
+   yarn start
+   ```
 
-### Advanced Configuration
+   The application will open at `http://localhost:3000`
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+### Configuration
 
-### Deployment
+Update the API URL in the frontend code if needed:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+```javascript
+// In src/MedicalCodingAssistant.jsx (or your component file)
+const API_URL = "http://localhost:8000/predict";
+```
 
-### `npm run build` fails to minify
+## 📖 Usage
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+1. **Enter Clinical Text**: Paste or type clinical documentation including symptoms, diagnoses, procedures, and medical history
+
+2. **Click "Predict ICD-10 Codes"**: The AI model will analyze the text
+
+3. **Review Results**: The predicted ICD-10 codes will appear with their descriptions
+
+4. **Verify Codes**: Always review AI predictions with qualified medical coding professionals
+
+### Example Input
+
+```
+Patient presents with acute lower back pain radiating to left leg for 3 days. 
+History of lumbar strain. Physical examination shows limited range of motion 
+and tenderness in L4-L5 region. Patient reports pain worsens with sitting.
+```
+
+
+## 🏗️ Project Structure
+
+```
+medical-coding-assistant/
+├── frontend/
+│   ├── public/
+│   ├── src/
+│   │   ├── components/
+│   │   │   └── MedicalCodingAssistant.jsx
+│   │   ├── App.js
+│   │   └── index.js
+│   ├── package.json
+│   └── README.md
+├── backend/
+│   ├── models/
+│   │   └── icd_model.pkl
+│   ├── main.py (or app.py)
+│   ├── requirements.txt
+│   └── README.md
+├── LICENSE
+└── README.md
+```
+
+## 🌐 Deployment
+
+### Frontend (Vercel/Netlify)
+
+1. Push your code to GitHub
+2. Connect your repository to Vercel or Netlify
+3. Set build command: `npm run build`
+4. Set publish directory: `build`
+5. Update API URL to your backend production URL
+
+### Backend (Render/Railway/Heroku)
+
+1. Push your backend code to GitHub
+2. Connect to your hosting platform
+3. Set start command (e.g., `uvicorn main:app --host 0.0.0.0 --port $PORT`)
+4. Add environment variables if needed
+5. Deploy and note the production URL
+
+## 🔧 API Endpoints
+
+### POST `/predict`
+
+Predicts ICD-10 codes from clinical text.
+
+**Request Body:**
+```json
+{
+  "clinical_text": "Patient presents with acute bronchitis..."
+}
+```
+
+**Response:**
+```json
+{
+  "icd_prediction": "J20.9"
+}
+```
+
+## 🤝 Contributing
+
+Contributions are welcome! Please feel free to submit a Pull Request.
+
+1. Fork the Project
+2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the Branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
+
+## ⚠️ Disclaimer
+
+This tool is designed to assist medical coding professionals and should NOT be used as the sole method for medical coding. All AI predictions must be reviewed and verified by qualified healthcare professionals. This application is for educational and assistive purposes only.
+
+## 📄 License
+
+Distributed under the MIT License. See `LICENSE` for more information.
+
+## 📧 Contact
+
+Your Name - [@yourtwitter](https://twitter.com/yourtwitter) - your.email@example.com
+
+Project Link: [https://github.com/yourusername/medical-coding-assistant](https://github.com/yourusername/medical-coding-assistant)
+
+## 🙏 Acknowledgments
+
+- ICD-10 code database
+- Open-source NLP libraries
+- Healthcare coding community
+- [React](https://reactjs.org/)
+- [FastAPI](https://fastapi.tiangolo.com/) / [Flask](https://flask.palletsprojects.com/)
+
+---
+
+**⭐ Star this repo if you find it helpful!**
